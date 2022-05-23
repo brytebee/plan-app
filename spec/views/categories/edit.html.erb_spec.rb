@@ -18,7 +18,7 @@ RSpec.describe "categories/edit", type: :view do
 
       assert_select "input[name=?]", "category[icon]"
 
-      assert_select "input[name=?]", "category[user_id]"
+      assert_select "input[name=?]", "category[author_id]"
     end
   end
 end
