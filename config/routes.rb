@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  resources :categories do
-    resources :transactions
-  end
+  resources :categories
+  resources :transactions
   devise_for :users
+
   devise_scope :user do
-    authenticated do
-      root :to => 'category#index' as: authenticated_root
-      get '/users/sign_out' => 'devise/session#destroy'
+    authenticated :user do
+      root :to => 'categories#index', as: :authenticated_root
+      get '/users/sign_out' => 'devise/sessions#destroy'
+    end
+    unauthenticated :user do
+      root :to => 'splash_screen#home', as: :unauthenticated_root
     end
   end
-  root 'splash_screen#home'
 end
