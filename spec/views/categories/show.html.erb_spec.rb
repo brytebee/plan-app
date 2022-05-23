@@ -5,8 +5,7 @@ RSpec.describe "categories/show", type: :view do
     @category = assign(:category, Category.create!(
       name: "Name",
       icon: "Icon",
-      user: nil,
-      transaction: nil
+      user: nil
     ))
   end
 
@@ -14,7 +13,6 @@ RSpec.describe "categories/show", type: :view do
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/Icon/)
-    expect(rendered).to match(//)
     expect(rendered).to match(//)
   end
 end

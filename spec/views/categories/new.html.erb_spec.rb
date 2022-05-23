@@ -5,8 +5,7 @@ RSpec.describe "categories/new", type: :view do
     assign(:category, Category.new(
       name: "MyString",
       icon: "MyString",
-      user: nil,
-      transaction: nil
+      user: nil
     ))
   end
 
@@ -20,8 +19,6 @@ RSpec.describe "categories/new", type: :view do
       assert_select "input[name=?]", "category[icon]"
 
       assert_select "input[name=?]", "category[user_id]"
-
-      assert_select "input[name=?]", "category[transaction_id]"
     end
   end
 end

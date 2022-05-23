@@ -6,14 +6,12 @@ RSpec.describe "categories/index", type: :view do
       Category.create!(
         name: "Name",
         icon: "Icon",
-        user: nil,
-        transaction: nil
+        user: nil
       ),
       Category.create!(
         name: "Name",
         icon: "Icon",
-        user: nil,
-        transaction: nil
+        user: nil
       )
     ])
   end
@@ -22,7 +20,6 @@ RSpec.describe "categories/index", type: :view do
     render
     assert_select "tr>td", text: "Name".to_s, count: 2
     assert_select "tr>td", text: "Icon".to_s, count: 2
-    assert_select "tr>td", text: nil.to_s, count: 2
     assert_select "tr>td", text: nil.to_s, count: 2
   end
 end
