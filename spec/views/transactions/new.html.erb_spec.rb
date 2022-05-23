@@ -5,7 +5,8 @@ RSpec.describe "transactions/new", type: :view do
     assign(:transaction, Transaction.new(
       name: "MyString",
       amount: "",
-      user: nil
+      user: nil,
+      category: nil
     ))
   end
 
@@ -19,6 +20,8 @@ RSpec.describe "transactions/new", type: :view do
       assert_select "input[name=?]", "transaction[amount]"
 
       assert_select "input[name=?]", "transaction[user_id]"
+
+      assert_select "input[name=?]", "transaction[category_id]"
     end
   end
 end

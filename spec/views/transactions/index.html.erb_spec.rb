@@ -6,12 +6,14 @@ RSpec.describe "transactions/index", type: :view do
       Transaction.create!(
         name: "Name",
         amount: "",
-        user: nil
+        user: nil,
+        category: nil
       ),
       Transaction.create!(
         name: "Name",
         amount: "",
-        user: nil
+        user: nil,
+        category: nil
       )
     ])
   end
@@ -20,6 +22,7 @@ RSpec.describe "transactions/index", type: :view do
     render
     assert_select "tr>td", text: "Name".to_s, count: 2
     assert_select "tr>td", text: "".to_s, count: 2
+    assert_select "tr>td", text: nil.to_s, count: 2
     assert_select "tr>td", text: nil.to_s, count: 2
   end
 end
