@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PlanApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <% if user_signed_in? %>
+      <h6> Welcome <%=current_user.email %></h6>
+      <a><%= button_to "Sign out", destroy_user_session_path, method: :delete %></a>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
