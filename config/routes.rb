@@ -12,4 +12,5 @@ Rails.application.routes.draw do
       root :to => 'splash_screen#home', as: :unauthenticated_root
     end
   end
+  root 'splash_screen#home'
 end
