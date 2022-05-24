@@ -9,13 +9,12 @@ class Ability
       can :manage, :all
     else
       can :read, Category, author_id: user.id
-      can :show, Category, author_id: user.id
       can :update, Category, author_id: user.id
       can :destroy, Category, author_id: user.id
       can :read, Transaction, author_id: user.id
-      can :show, Transaction, author_id: user.id
       can :update, Transaction, author_id: user.id
       can :destroy, Transaction, author_id: user.id
+      can :create, :all
     end
   end
 end
