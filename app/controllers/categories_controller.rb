@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class CategoriesController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!
@@ -24,7 +22,6 @@ class CategoriesController < ApplicationController
   # POST /categories or /categories.json
   def create
     @category = Category.new(category_params)
-    @category.author_id = current_user.id
 
     respond_to do |format|
       if @category.save
