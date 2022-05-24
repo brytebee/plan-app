@@ -4,10 +4,12 @@
 
 <div id="transactions">
   <% @transactions.each do |transaction| %>
+  <% if can? :read, transaction %>
     <%= render transaction %>
     <p>
       <%= link_to "Show this transaction", transaction %>
     </p>
+  <% end %>
   <% end %>
 </div>
 
