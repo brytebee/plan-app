@@ -14,7 +14,7 @@ class Ability
       can :read, Transaction, author_id: user.id
       can :update, Transaction, author_id: user.id
       can :destroy, Transaction, author_id: user.id
-      can :create, :all
+      can :create, all
     end
   end
 end
