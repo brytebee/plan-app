@@ -3,8 +3,13 @@
 <%= render @transaction %>
 
 <div>
-  <%= link_to "Edit this transaction", edit_transaction_path(@transaction) %> |
-  <%= link_to "Back to transactions", transactions_path %>
+  <% if can? :update, @transaction %>
+    <%= link_to "Edit this transaction", edit_transaction_path(@transaction) %> |
+  <% end %>
 
-  <%= button_to "Destroy this transaction", @transaction, method: :delete %>
+  <%= link_to "Back to transactions", transactions_path %>
+  
+  <% if can? :destroy, @transaction %>
+    <%= button_to "Destroy this transaction", @transaction, method: :delete %>
+  <% end %>
 </div>
