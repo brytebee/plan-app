@@ -2,6 +2,11 @@
 
 <h1>Transactions</h1>
 
+<p>
+  <strong>Total transaction:</strong>
+  <%= @total_transactions %>
+</p>
+
 <div id="transactions">
   <% @recent_transactions.each do |transaction| %>
   <% if can? :read, transaction %>
