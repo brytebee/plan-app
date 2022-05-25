@@ -7,7 +7,8 @@
     <%= link_to "Edit this transaction", edit_transaction_path(@transaction) %> |
   <% end %>
 
-  <%= link_to <i class="bi bi-arrow-left"></i>, transactions_path %>
+  <%= link_to "Back to transactions", transactions_path %>
+  <%= link_to('', transactions_path(@transaction), :class => "chevron-down") %>
   
   <% if can? :destroy, @transaction %>
     <%= button_to "Destroy this transaction", @transaction, method: :delete %>
