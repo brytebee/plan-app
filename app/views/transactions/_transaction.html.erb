@@ -18,5 +18,10 @@
     <strong>Category:</strong>
     <%= transaction.category_id %>
   </p>
+  
+  <p>
+    <strong>Date:</strong>
+    <%= transaction.created_at.strftime('%F - %I:%M:%S %p') %>
+  </p>
 
 </div>
