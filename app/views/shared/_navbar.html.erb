@@ -4,12 +4,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="#">
-    <%# if controller_name != 'splash_screen' %>
-      <%#= action_name.capitalize %> <%= controller_name.capitalize.singularize %>
-    <%# end %>
-    <%# <% content_for :page_title %>
-         <%#= yield  %>
-    <%# end %> 
+    <% if controller_name != 'splash_screen' %>
+      <%= action_name.capitalize %> <%= controller_name.capitalize.singularize %>
+    <% end %> 
     </a>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
