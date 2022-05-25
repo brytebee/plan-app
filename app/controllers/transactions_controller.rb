@@ -2,6 +2,7 @@ class TransactionsController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!
   before_action :set_transaction, only: %i[show edit update destroy]
+  before_action :recent_transactions
 
   # GET /transactions or /transactions.json
   def index
@@ -62,6 +63,10 @@ class TransactionsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_transaction
     @transaction = Transaction.find(params[:id])
+  end
+
+  def recent_transactions
+    @transactions.order(created_at: :desc)
   end
 
   # Only allow a list of trusted parameters through.
