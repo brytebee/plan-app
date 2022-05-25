@@ -18,7 +18,7 @@
   <% if @category.transactions.empty? %>
     <p>Add some transactions. There's none yet!</p>
   <% else %>
-    <% @category.transactions.each do |transaction| %>
+    <% @category.transactions.order(:created_at :desc).each do |transaction| %>
       <%= render transaction %>
     <% end %>
   <% end %>
