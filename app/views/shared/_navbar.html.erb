@@ -8,17 +8,17 @@
       <a class="navbar-brand" href="#">
         <% case "#{action_name.capitalize} #{controller_name.capitalize.singularize}" %>
         <% when "New Session" %>
-            LOGIN
+          LOGIN
         <% when "New Registration" %>
-            REGISTER
+          REGISTER
         <% when "New Password" %>
-            RECOVER PASSWORD
+          RECOVER PASSWORD
         <% when "Show Category" %>
-            VIEWS
+          VIEWS
         <% when "Index Category" %>
-            CATEGORIES
+          CATEGORIES
         <% when "Index Transaction" %>
-            TRANSACTIONS
+          TRANSACTIONS
         <% end %>
       </a>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -43,7 +43,21 @@
             <% end %>
         </div>
       </div>
-      <i class="bi bi-search"></i>
+      <% case "#{action_name.capitalize} #{controller_name.capitalize.singularize}" %>
+        <% when "New Session" %>
+          <input type="submit" value="Login" form="session_path(resource_name)">
+          <%#= link_to "Login", session_path(resource_name), class: "text-white" %> 
+        <% when "New Registration" %>
+          <%= link_to "Next", session_path(resource_name), class: "text-white" %>
+        <% when "New Password" %>
+          RECOVER PASSWORD
+        <% when "Show Category" %>
+          VIEWS
+        <% when "Index Category" %>
+          <i class="bi bi-search"></i>
+        <% when "Index Transaction" %>
+          <i class="bi bi-search"></i>
+      <% end %>
     </div>
   </nav>
   
