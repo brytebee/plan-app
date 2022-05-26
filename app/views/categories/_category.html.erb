@@ -3,7 +3,7 @@
       <%= image_tag "#{category.icon}", size: "150x150", alt: 'icon' %>
     <div>
       <%= category.name %>
-      <%= @total_amount %>
+      <%#= Transaction.total_amount(@category.transaction) %>
     </div>
   </div>
 </div>
