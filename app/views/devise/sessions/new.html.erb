@@ -11,13 +11,13 @@
                 <%= form_for(resource, as: resource_name, url: session_path(resource_name), id: "main_login_in") do |f| %>
                   <!-- Email input -->
                   <div class="form-outline mb-4">
-                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder: "Email" %>
                     <%# <label class="form-label" for="form1Example1">Email address</label> %>
                   </div>
 
                   <!-- Password input -->
                   <div class="form-outline mb-4">
-                    <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
+                    <%= f.password_field :password, autocomplete: "current-password", class:"form-control", placeholder: "Password" %>
                     <%# <label class="form-label" for="form1Example2">Password</label> %>
                   </div>
 
