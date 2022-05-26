@@ -4,8 +4,7 @@
     <div>
       <h3><%= category.name %></h3>
       <span class="fs-6 fw-light"><%= category.created_at %></span>
-
-      <%#= Transaction.total_amount(@category.transaction) %>
+      <%= number_to_currency(category.transactions.sum(:amount))  %>
     </div>
   </div>
 </div>
