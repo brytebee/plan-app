@@ -19,7 +19,11 @@
     <p>Add some transactions. There's none yet!</p>
   <% else %>
     <% @category.transactions.order(created_at: :desc).each do |transaction| %>
-      <%= render transaction %>
+      <%= link_to transaction do %>
+        <div class="card-1">
+          <%= render transaction %>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
   <%= link_to 'Add new transaction', new_transaction_path %>
