@@ -32,9 +32,9 @@
               <h6> Welcome <%=current_user.email %></h6>
               <a><%= button_to "Log out", destroy_user_session_path, method: :delete %></a>
             <% end %>
-            <i class="bi bi-search"></i>
         </div>
       </div>
+      <i class="bi bi-search"></i>
     </div>
   </nav>
 <% end %>
