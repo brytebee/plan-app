@@ -19,6 +19,8 @@
           CATEGORIES
         <% when "Index Transaction" %>
           TRANSACTIONS
+        <% else %>
+          <%= controller_name.upcase.singularize %>
         <% end %>
       </a>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -49,14 +51,12 @@
           <%#= link_to "Login", session_path(resource_name), class: "text-white" %> 
         <% when "New Registration" %>
           <%= link_to "Next", session_path(resource_name), class: "text-white" %>
-        <% when "New Password" %>
-          RECOVER PASSWORD
-        <% when "Show Category" %>
-          VIEWS
         <% when "Index Category" %>
           <i class="bi bi-search"></i>
         <% when "Index Transaction" %>
           <i class="bi bi-search"></i>
+        <% else %>
+          <p class="color-first"> </p>
       <% end %>
     </div>
   </nav>
