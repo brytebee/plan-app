@@ -1,42 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-first">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">
-    <% if controller_name != 'splash_screen' %>
-      <%= action_name.capitalize %> <%= controller_name.capitalize.singularize %>
-    <% end %> 
-    </a>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <% if user_signed_in? %>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <%= link_to "Categories", @categories_path %>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-        </div>
-        <% else %>
-          <%# if controller_name != 'splash_screen' %>
-            <%= link_to "Register", new_user_registration_path %>
-            <%= link_to "Log In", new_user_registration_path %>
-          <%# end %>
-        <% end %>
-        </ul>
-        <div class="d-flex">
+<% if controller_name != 'splash_screen' %>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-first">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+      <% if controller_name != 'splash_screen' %>
+        <%= action_name.capitalize %> <%= controller_name.capitalize.singularize %>
+      <% end %> 
+      </a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <% if user_signed_in? %>
-            <h6> Welcome <%=current_user.email %></h6>
-            <a><%= button_to "Log out", destroy_user_session_path, method: :delete %></a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <%= link_to "Categories", @categories_path %>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+          </div>            
           <% end %>
+          </ul>
+          <div class="d-flex">
+            <% if user_signed_in? %>
+              <h6> Welcome <%=current_user.email %></h6>
+              <a><%= button_to "Log out", destroy_user_session_path, method: :delete %></a>
+            <% end %>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
+<% end %>
