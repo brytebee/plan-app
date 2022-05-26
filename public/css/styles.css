@@ -26,3 +26,7 @@
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   margin: 10px 0;
 }
+
+a:link {
+  text-decoration: none;
+}
