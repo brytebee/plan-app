@@ -1,9 +1,7 @@
 <p style="color: red"><%= flash[:alert] %></p>
-<h1>SplashScreen#home</h1>
-<p>Find me in app/views/splash_screen/home.html.erb</p>
-
-
-
+<div>
+  <%= image_tag '/assets/plan_app_demo_1.gif', size: "250x240", alt: 'icon' %>
+</div>
 <div class="d-grid gap-2">
   <%= link_to "Log in", new_user_session_path, class: "btn btn-primary" %>
   <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
