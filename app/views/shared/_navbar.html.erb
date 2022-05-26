@@ -1,13 +1,25 @@
 <% if controller_name != 'splash_screen' %>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-first">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand" href="#">
-      <% if controller_name != 'splash_screen' %>
-        <%= action_name.capitalize %> <%= controller_name.capitalize.singularize %>
-      <% end %> 
+        <% case "#{action_name.capitalize} #{controller_name.capitalize.singularize}" %>
+        <% when "New Session" %>
+            LOGIN
+        <% when "New Registration" %>
+            REGISTER
+        <% when "New Password" %>
+            RECOVER PASSWORD
+        <% when "Show Category" %>
+            VIEWS
+        <% when "Index Category" %>
+            CATEGORIES
+        <% when "Index Transaction" %>
+            TRANSACTIONS
+        <% end %>
       </a>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -34,4 +46,5 @@
       <i class="bi bi-search"></i>
     </div>
   </nav>
+  
 <% end %>
