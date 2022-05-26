@@ -28,7 +28,7 @@
 
                   <div>
                     <%#= form.label :amount, style: "display: block" %>
-                    <%= form.text_field :amount, class:"form-control", placeholder: "Enter Amount" %>
+                    <%= form.text_field :amount, class:"form-control mt-3 mb-3", placeholder: "Enter Amount" %>
                   </div>
 
                   <div>
@@ -39,14 +39,17 @@
                   <div>
                     <%#= form.label :category_id, style: "display: block" %>
                     <div>
-                      <%= form.select :category_id, Category.all.collect {|c| [c.name, c.id]}, { include_blank: true }, class:"form-control", placeholder: "Select Category" %>
+                      <%= form.select :category_id, Category.all.collect {|c| [c.name, c.id]}, { prompt: "Select Category" }, class:"form-control mb-3" %>
                     </div>
                   </div>
 
                   <div>
-                    <%= form.submit %>
+                    <%= form.submit "Add Transaction", class: "btn btn-primary form-control" %>
                   </div>
                 <% end %>
+                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                  <%= link_to "Back to transactions", transactions_path %>
+                </div>
               </div>
               <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
