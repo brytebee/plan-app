@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <%= link_to "" do  %>
-  <div class="d-grid col-12 mx-auto form-control text-center">
+  <div class="d-flex gap-3 p-2 bg-second w-100 text-white justify-content-center fs-5">
     <strong>Total transaction:</strong> <%= number_to_currency(@total_transactions) %>
   </div>
 <% end %>
@@ -20,7 +20,7 @@
   <% end %>
 </div>
 
-<div class="d-grid gap-2 col-12 mx-auto">
-  <%= link_to "New category", new_category_path, class: "btn bg-first text-white hover-text-black" %>
-  <%= link_to "New transaction", new_transaction_path, class: "btn btn-primary" %>
+<div class="d-flex gap-3">
+  <%= link_to "New category", new_category_path, class: "btn bg-first text-white w-50" %>
+  <%= link_to "New transaction", new_transaction_path, class: "btn bg-second text-white w-50" %>
 </div>
