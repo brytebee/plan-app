@@ -1,8 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @category %>
+<div class="mx-4">
+  <%= render @category %>
 
-<div>
   <% if can? :update, @category %>
     <%= link_to "Edit this category", edit_category_path(@category), hidden: true %>
   <% end %>
