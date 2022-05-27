@@ -1,8 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @transaction %>
-
 <div>
+  <%= render @transaction %>
+
   <% if can? :update, @transaction %>
     <%= link_to "Edit this transaction", edit_transaction_path(@transaction), hidden: true %> 
   <% end %>
