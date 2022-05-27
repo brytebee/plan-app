@@ -4,6 +4,14 @@
 
 This Ruby on Rails project is a mobile web application where you can manage your budget, you have a list of transactions associated with a category so that you can see how much money you spent and on what. It allows the user to: register and log in, so that the data is private to them, introduce new transactions associated with a category, and see the money spent on each category.
 
+## Demo
+
+### Video Presentation
+
+[Live Demo](http://contactz-apps.herokuapp.com/)
+
+[See the Video](https://www.loom.com/share/7a654b3fe8104fa59376e39af91e61fd)
+
 ## Built With
 
 - Rails
