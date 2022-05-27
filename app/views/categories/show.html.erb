@@ -10,7 +10,7 @@
   <%= link_to "Back to categories", categories_path, hidden: true %>
 
   <% if can? :destroy, @category %>
-    <%= button_to "Destroy this category", @category, method: :delete, hidden: true %>
+    <%= button_to "Destroy this category", @category, method: :delete %>
   <% end %>
 </div>
 
