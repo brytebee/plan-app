@@ -7,7 +7,7 @@ class TransactionsController < ApplicationController
   def index
     @transactions = Transaction.all
     @recent_transactions = @transactions.order(created_at: :desc)
-    @total_transactions = @transactions.sum(:amount)
+    @total_transactions = current_user.transactions.sum(:amount)
   end
 
   # GET /transactions/1 or /transactions/1.json
