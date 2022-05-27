@@ -4,13 +4,13 @@
 
 <div>
   <% if can? :update, @category %>
-    <%= link_to "Edit this category", edit_category_path(@category) %> |
+    <%= link_to "Edit this category", edit_category_path(@category), hidden: true %>
   <% end %>
 
-  <%= link_to "Back to categories", categories_path %>
+  <%= link_to "Back to categories", categories_path, hidden: true %>
 
   <% if can? :destroy, @category %>
-    <%= button_to "Destroy this category", @category, method: :delete %>
+    <%= button_to "Destroy this category", @category, method: :delete, hidden: true %>
   <% end %>
 </div>
 
@@ -26,5 +26,8 @@
       <% end %>
     <% end %>
   <% end %>
-  <%= link_to 'Add new transaction', new_transaction_path %>
+  
+<div class="d-flex gap-3">
+  <%= link_to "New transaction", new_transaction_path, class: "btn bg-second text-white w-100" %>
+</div>
 </div>
