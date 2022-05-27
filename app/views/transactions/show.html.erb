@@ -4,13 +4,13 @@
 
 <div>
   <% if can? :update, @transaction %>
-    <%= link_to "Edit this transaction", edit_transaction_path(@transaction) %> |
+    <%= link_to "Edit this transaction", edit_transaction_path(@transaction), hidden: true %> 
   <% end %>
 
-  <%= link_to "Back to transactions", transactions_path %>
-  <%= link_to('', transactions_path(@transaction), :class => "chevron-down") %>
+  <%= link_to "Back to transactions", transactions_path, hidden: true %>
+  <%#= link_to('', transactions_path(@transaction), :class => "chevron-down") %>
   
   <% if can? :destroy, @transaction %>
-    <%= button_to "Destroy this transaction", @transaction, method: :delete %>
+    <%= button_to "Destroy this transaction", @transaction, method: :delete, hidden: true %>
   <% end %>
 </div>
