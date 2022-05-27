@@ -13,5 +13,7 @@
   <% end %>
 </div>
 
-<%= link_to "New category", new_category_path %>
-<%= link_to "New transaction", new_transaction_path %>
+<div class="d-flex gap-3">
+  <%= link_to "New category", new_category_path, class: "btn bg-first text-white w-50" %>
+  <%= link_to "New transaction", new_transaction_path, class: "btn bg-second text-white w-50" %>
+</div>
