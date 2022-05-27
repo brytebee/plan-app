@@ -1,17 +1,19 @@
 <p style="color: green"><%= notice %></p>
 <p style="color: red"><%= flash[:alert] %></p>
 
-<h1>Categories</h1>
-
 <div id="categories">
   <% @categories.each do |category| %>
     <% if can? :read, category %>
-      <%= render category %>
-      <p>
-        <%= link_to "Show this category", category %>
-      </p>
+      <%= link_to category do %>
+        <div class="card-1">
+          <%= render category %>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>
 
-<%= link_to "New category", new_category_path %>
+<div class="d-flex gap-3">
+  <%= link_to "New category", new_category_path, class: "btn bg-first text-white w-50" %>
+  <%= link_to "New transaction", new_transaction_path, class: "btn bg-second text-white w-50" %>
+</div>
