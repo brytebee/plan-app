@@ -8,7 +8,7 @@ This Ruby on Rails project is a mobile web application where you can manage your
 
 ### Video Presentation
 
-[Live Demo](https://salty-stream-24790.herokuapp.com/)
+[Live Demo](https://plan-app-brytebee.herokuapp.com/)
 
 [See the Video](https://www.loom.com/share/7a654b3fe8104fa59376e39af91e61fd)
 
