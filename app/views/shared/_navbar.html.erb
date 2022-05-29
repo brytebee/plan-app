@@ -1,6 +1,6 @@
 <% if controller_name != 'splash_screen' %>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-first">
+  <nav class="navbar navbar-expand-xlg navbar-dark bg-first">
     <div class="container-fluid">
       <% unless "#{action_name.capitalize} #{controller_name.capitalize.singularize}" == "Index Category" || "#{action_name.capitalize} #{controller_name.capitalize.singularize}" == "Index Transaction" %>
         <%# <i class="bi bi-arrow-left text-white fs-4"></i> %>
@@ -60,7 +60,7 @@
           </ul>
           <div class="d-flex">
             <% if user_signed_in? %>
-              <h6> Welcome <%=current_user.email %></h6>
+              <h6> Welcome <%=current_user.name %></h6>
               <a><%= button_to "Log out", destroy_user_session_path, method: :delete %></a>
             <% end %>
         </div>
